@@ -1,0 +1,12 @@
+ROMYHACK Multi-Firmware — fuentes importadas
+Fecha UTC: 2026-11-23 01:39:59
+Modo: commits fijados
+
+mps14: https://github.com/romyhack-code/mps.git
+Commit: c5274fd80dcf3eb908e00baa5f4a182e31db9611
+
+g2all: https://github.com/GamerHack/GamerHack.github.io.git
+Commit: 52edf4c347a407c58880304b9c17d0c4cc6aace0
+
+Se normalizaron barras de URL en manifiestos g2all cuando correspondia.
+Los módulos originales conservan créditos y avisos del código fuente.

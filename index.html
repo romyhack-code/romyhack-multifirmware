@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="ROMYHACK-CODE">
+  <meta name="description" content="ROMYHACK Multi-Firmware: selector de host para PS4. Firmware 14.00 verificado; 14.02 experimental.">
+  <title>ROMYHACK // Multi-Firmware Host</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="decor decor-one"></div><div class="decor decor-two"></div>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Inicio ROMYHACK"><span class="brand-mark">RH</span><span><b>ROMYHACK</b><small>CODE / PS4 LAB</small></span></a>
+      <div class="top-right"><span class="live-dot"></span> MULTI-FIRMWARE HOST <span class="version">v1.0</span></div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="line"></span> WEBKIT EXPLOIT HOST / PLAYSTATION 4</div>
+        <h1>ONE HOST.<br><span class="neon">MULTI-FIRMWARE.</span></h1>
+        <p class="lead">Tu centro de acceso a hosts separados de GoldHEN. Selecciona el firmware de tu consola para abrir el módulo correspondiente.</p>
+        <div class="hero-pills"><span class="pill"><span class="tiny-dot good"></span> 14.00 PROBADO</span><span class="pill amber"><span class="tiny-dot caution"></span> 14.02 EXPERIMENTAL</span><span class="pill muted">SIN RECURSOS EXTERNOS</span></div>
+      </section>
+      <div class="workspace">
+        <section class="panel detect-panel">
+          <div class="panel-title"><span class="count">01</span><span>DETECCIÓN DE CONSOLA</span></div>
+          <div class="info-strip"><div><span class="field-label">DISPOSITIVO</span><strong id="deviceValue">Analizando navegador...</strong></div><div><span class="field-label">FIRMWARE DETECTADO</span><strong id="fwValue">--.--</strong></div></div>
+          <p class="muted-copy" id="detectionHint">La detección se realiza en el navegador. Si estás en PC o Android, puedes ver la interfaz en modo de demostración.</p>
+          <div class="subheading">Selecciona la familia de firmware</div>
+          <div class="fw-grid" id="firmwareGrid">
+            <button class="fw-btn" type="button" data-fw="5.05">5.05</button>
+            <button class="fw-btn" type="button" data-fw="7.00">7.xx / 8.xx</button>
+            <button class="fw-btn" type="button" data-fw="9.00">9.xx</button>
+            <button class="fw-btn" type="button" data-fw="10.00">10.xx / 11.02</button>
+            <button class="fw-btn" type="button" data-fw="11.50">11.50 / 11.52</button>
+            <button class="fw-btn" type="button" data-fw="12.00">12.xx / 13.xx</button>
+            <button class="fw-btn" type="button" data-fw="14.00">14.00</button>
+            <button class="fw-btn experimental" type="button" data-fw="14.02">14.02 <span class="tiny-label">BETA</span></button>
+          </div>
+          <div class="note">La selección manual solo cambia el enlace de navegación. El firmware real vuelve a comprobarse dentro de cada host.</div>
+        </section>
+        <section class="panel launch-panel">
+          <div class="panel-title"><span class="count">02</span><span>LANZADOR</span></div>
+          <div class="orb-wrap"><div class="orb-satellite one"></div><div class="orb-satellite two"></div><div class="orb"><span>PS4</span><small>HOST</small></div></div>
+          <div class="launch-name" id="engineName">SELECCIONA UN FIRMWARE</div>
+          <div class="launch-meta" id="engineMeta">Esperando selección para preparar el módulo.</div>
+          <div class="status-line" id="engineStatus">● SIN SELECCIÓN</div>
+          <div id="warning" class="warning" style="display:none"></div>
+          <a id="launchBtn" class="action-btn disabled" href="#" aria-disabled="true">ABRIR HOST <span>↗</span></a>
+          <a id="cacheBtn" class="secondary-btn disabled" href="#" aria-disabled="true">INSTALAR / REVISAR CACHÉ</a>
+          <p class="action-info" id="actionInfo">No se iniciará ningún exploit al abrir esta portada.</p>
+        </section>
+      </div>
+      <section class="wide-panel" id="acerca">
+        <div class="panel-title"><span class="count">03</span><span>INFORMACIÓN TÉCNICA</span></div>
+        <div class="features">
+          <div><b>MÓDULOS AISLADOS</b><p>El host de PS4 14.00 no comparte scripts, binarios ni manifiestos con G2All.</p></div>
+          <div><b>ACTUALIZACIÓN CONTROLADA</b><p>Los archivos upstream se importan como instantáneas identificadas mediante commit.</p></div>
+          <div><b>CACHÉ INDEPENDIENTE</b><p>Cada módulo administra su caché. No elimines la caché funcional de 14.00 para probar 14.02.</p></div>
+        </div>
+      </section>
+    </main>
+    <footer><span>© 2026 ROMYHACK-CODE · MULTI-FIRMWARE</span><span>Basado en MPS y GamerHack G2All · Créditos conservados en sus módulos</span></footer>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

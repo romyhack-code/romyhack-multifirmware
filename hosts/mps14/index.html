@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" manifest="cache.appcache">
+<head>
+  <meta name="author" content="mansoor0x">
+  <meta name="copyright" content="Copyright 2026 mansoor0x | 1_X @ZeroMan">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a1b">
+  <title>ROMYHACK // PS4 14.00 · GoldHEN</title>
+  <style>
+    /* Tema CYBER para PS4: sin librerías, imágenes o fuentes externas. */
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      color: #f1f5ff;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #070a1b;
+      background-image:
+        radial-gradient(ellipse at 18% 13%, rgba(42, 90, 202, .35) 0%, rgba(42, 90, 202, 0) 45%),
+        radial-gradient(ellipse at 86% 78%, rgba(121, 37, 179, .26) 0%, rgba(121, 37, 179, 0) 45%),
+        linear-gradient(140deg, #080b1c 0%, #080d21 46%, #0c0c28 100%);
+      overflow-x: hidden;
+    }
+    body:before {
+      content: '';
+      position: fixed;
+      z-index: 0;
+      left: 0; top: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(104, 154, 255, .075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(104, 154, 255, .075) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: .85;
+    }
+    body:after {
+      content: '';
+      position: fixed;
+      z-index: 0;
+      top: -240px; right: -180px;
+      width: 650px; height: 650px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(127, 62, 254, .18) 0%, transparent 67%);
+    }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1320px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 46px 22px;
+    }
+    .header {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      padding: 0 4px 18px;
+      border-bottom: 1px solid rgba(129, 159, 241, .18);
+    }
+    .brand { font-size: 16px; font-weight: bold; letter-spacing: 2.4px; }
+    .brand strong { color: #5ae6ff; }
+    .brand small { display: block; margin-top: 6px; color: #8193b8; font-size: 10px; font-weight: normal; letter-spacing: 2.4px; }
+    .header-tag { font-size: 11px; letter-spacing: 1.7px; color: #9aaed1; text-align: right; }
+    .header-tag b { display: block; margin-top: 6px; color: #e9c777; font-size: 12px; }
+    .stage { min-height: 77vh; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }
+    .panel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin: 38px 0;
+      padding: 64px 64px 59px;
+      border: 1px solid rgba(80, 138, 241, .4);
+      border-radius: 18px;
+      background: rgba(8, 14, 35, .9);
+      box-shadow: 0 22px 80px rgba(0, 0, 0, .38), 0 0 55px rgba(39, 96, 203, .12), inset 0 1px 0 rgba(162, 208, 255, .1);
+    }
+    .panel:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 36%; height: 3px;
+      background: linear-gradient(90deg, #48eaff, #7460ff, transparent);
+      box-shadow: 0 0 20px rgba(66, 220, 255, .6);
+    }
+    .panel:after {
+      content: '';
+      position: absolute;
+      right: -80px; bottom: -180px;
+      width: 530px; height: 530px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(51, 73, 175, .2) 0%, transparent 68%);
+    }
+    .content { position: relative; z-index: 2; width: 62%; }
+    .eyebrow { display: inline-block; padding: 10px 13px; margin: 0 0 22px; color: #70ecff; border: 1px solid rgba(86, 231, 255, .35); border-radius: 5px; background: rgba(26, 123, 165, .13); font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+    h1 { margin: 0; font-size: 72px; line-height: 1.03; letter-spacing: -2px; font-weight: 800; text-shadow: 0 0 28px rgba(105, 145, 255, .14); }
+    h1 span { color: #ffdb72; text-shadow: 0 0 30px rgba(255, 202, 73, .22); }
+    .subtitle { margin: 19px 0 28px; color: #a9badb; font-size: 17px; line-height: 1.6; }
+    .subtitle strong { color: #e5eeff; }
+    .line { width: 70px; height: 3px; margin: 0 0 30px; background: linear-gradient(90deg, #4ceaff, #776bff); box-shadow: 0 0 16px rgba(57, 229, 255, .4); }
+    .status-box { padding: 20px 22px; max-width: 520px; border: 1px solid rgba(91, 146, 234, .26); border-radius: 10px; background: rgba(20, 32, 68, .54); }
+    .status-caption { color: #8297be; font-size: 10px; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
+    .status-line { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }
+    .pulse { -webkit-flex: none; flex: none; width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; background: #56e3ff; box-shadow: 0 0 12px #56e3ff; -webkit-animation: blink 2s ease-in-out infinite; animation: blink 2s ease-in-out infinite; }
+    #status { color: #e4f7ff; font-size: 14px; line-height: 1.5; font-weight: bold; overflow-wrap: break-word; }
+    .chips { margin: 25px 0 0; }
+    .chip { display: inline-block; margin: 0 9px 9px 0; padding: 8px 10px; border: 1px solid rgba(121, 148, 217, .2); border-radius: 4px; color: #8fa6d0; font-size: 10px; font-weight: bold; letter-spacing: 1.2px; background: rgba(66, 88, 150, .1); }
+    .emblem { position: absolute; z-index: 1; right: 4%; top: 50%; margin-top: -170px; width: 340px; height: 340px; }
+    .ring { position: absolute; border-radius: 50%; }
+    .ring-a { left: 15px; top: 15px; right: 15px; bottom: 15px; border: 1px solid rgba(84, 219, 255, .25); box-shadow: 0 0 32px rgba(45, 121, 232, .13), inset 0 0 40px rgba(45, 121, 232, .09); }
+    .ring-b { left: 41px; top: 41px; right: 41px; bottom: 41px; border: 2px solid rgba(127, 95, 239, .52); border-left-color: rgba(127, 95, 239, .1); border-bottom-color: rgba(84, 219, 255, .16); -webkit-animation: spin 26s linear infinite; animation: spin 26s linear infinite; }
+    .ring-c { left: 67px; top: 67px; right: 67px; bottom: 67px; border: 1px dashed rgba(87, 225, 255, .32); -webkit-animation: spin 36s linear infinite reverse; animation: spin 36s linear infinite reverse; }
+    .emblem-core { position: absolute; width: 190px; height: 190px; left: 75px; top: 75px; border-radius: 50%; background: radial-gradient(circle, rgba(60, 74, 163, .3), rgba(6, 12, 37, .03) 68%); }
+    .emblem svg { position: absolute; top: 107px; left: 87px; width: 166px; height: 126px; -webkit-filter: drop-shadow(0 0 12px rgba(90, 200, 255, .28)); filter: drop-shadow(0 0 12px rgba(90, 200, 255, .28)); }
+    .orbit-dot { position: absolute; top: 28px; left: 160px; width: 9px; height: 9px; border-radius: 50%; background: #5fe4ff; box-shadow: 0 0 18px #5fe4ff; }
+    footer { border-top: 1px solid rgba(129, 159, 241, .16); padding: 19px 4px 3px; color: #7185ac; font-size: 11px; letter-spacing: .3px; text-align: center; }
+    footer strong { color: #a2b4d3; font-weight: normal; }
+    @-webkit-keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    @-webkit-keyframes spin { to { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (max-width: 920px) {
+      .page { padding: 20px; }
+      .panel { padding: 45px 34px; }
+      .content { width: 100%; }
+      .emblem { opacity: .18; right: -120px; }
+      h1 { font-size: 55px; }
+    }
+    @media (max-width: 540px) {
+      .page { padding: 15px; }
+      .header-tag { display: none; }
+      .panel { padding: 38px 22px; margin: 25px 0; }
+      h1 { font-size: 43px; letter-spacing: -1px; }
+      .subtitle { font-size: 14px; }
+      .eyebrow { font-size: 10px; letter-spacing: 1px; }
+      .emblem { display: none; }
+      .status-box { padding: 17px 14px; }
+      footer { line-height: 1.9; }
+    }
+    @media (prefers-reduced-motion: reduce) { .pulse, .ring-b, .ring-c { animation: none; -webkit-animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand"><strong>RH</strong> / ROMYHACK-CODE <small>INDEPENDENT PS4 EXPLOIT HOST</small></div>
+      <div class="header-tag">SONY PLAYSTATION 4 <b>FIRMWARE 14.00</b></div>
+    </header>
+
+    <main class="stage" id="out">
+      <section class="panel">
+        <div class="content">
+          <p class="eyebrow">● SYSTEM READY // MPS HOST</p>
+          <h1>GOLD<span>HEN</span></h1>
+          <p class="subtitle">Host personalizado para <strong>PS4 14.00</strong>.<br>Inicializando el entorno de ejecución...</p>
+          <div class="line"></div>
+          <div class="status-box" role="status" aria-live="polite">
+            <div class="status-caption">ESTADO DEL SISTEMA</div>
+            <div class="status-line"><span class="pulse" aria-hidden="true"></span><span id="status">Starting automatically...</span></div>
+          </div>
+          <div class="chips"><span class="chip">PS4 · 14.00</span><span class="chip">OFFLINE CACHE</span><span class="chip">AUTO LAUNCH</span></div>
+        </div>
+        <div class="emblem" aria-hidden="true">
+          <div class="ring ring-a"></div><div class="ring ring-b"></div><div class="ring ring-c"></div><div class="emblem-core"></div><div class="orbit-dot"></div>
+          <svg viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M48 39 C32 37 20 49 17 68 L9 98 C6 112 18 121 30 113 L57 92 L123 92 L150 113 C162 121 174 112 171 98 L163 68 C160 49 148 37 132 39 Z" fill="#101b42" stroke="#62dfff" stroke-width="3"/>
+            <path d="M47 58 V82 M35 70 H59" stroke="#6ddfff" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="129" cy="60" r="6" fill="#9d86ff"/><circle cx="145" cy="72" r="6" fill="#9d86ff"/><circle cx="113" cy="72" r="6" fill="#9d86ff"/><circle cx="129" cy="84" r="6" fill="#9d86ff"/>
+            <circle cx="71" cy="86" r="10" fill="#101b42" stroke="#6481c4" stroke-width="2"/><circle cx="109" cy="86" r="10" fill="#101b42" stroke="#6481c4" stroke-width="2"/>
+            <path d="M79 52 H101" stroke="#6481c4" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 <strong>romyhack-code</strong> · Instagram @franco_romy &nbsp;|&nbsp; MPS por <strong>mansoor0x · 1_X @ZeroMan</strong></footer>
+  </div>
+  <!-- Mantener este script y la etiqueta manifest: ejecutan el flujo original. -->
+  <script src="launch.js"></script>
+</body>
+</html>
